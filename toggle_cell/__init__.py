@@ -1,1 +1,1 @@
-from .tg_c import *
+from tg_c import *
