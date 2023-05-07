@@ -7,6 +7,7 @@ setup(
     url='https://github.com/Prajwal011/toggle_cell.git',
     author='PJ',
     author_email='prajwal.aiadventures@gmail.com',
-    license='unlicense'
+    license='unlicense',
+    packages=['abc']
 
 )
