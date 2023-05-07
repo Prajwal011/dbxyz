@@ -1,1 +1,1 @@
-from .toggle_cell import tg_c
+from togglecell import *
