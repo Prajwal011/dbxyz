@@ -1,1 +1,1 @@
-from togglecell import *
+import abc
