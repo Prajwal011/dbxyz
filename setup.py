@@ -8,6 +8,7 @@ setup(
     author='PJ',
     author_email='prajwal.aiadventures@gmail.com',
     license='unlicense',
-    packages=['abc']
+    packages=['abc'],
+    zip_safe=False
 
 )
