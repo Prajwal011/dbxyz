@@ -8,6 +8,6 @@ setup(
     author='PJ',
     author_email='prajwal.aiadventures@gmail.com',
     license='unlicense',
-    packages=['tg_c'],
+    packages=['toggle_cell'],
     zip_safe=False
 )
