@@ -115,7 +115,7 @@ class tg_c:
 #                 self.auth='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'
             print(auth)
             openai.api_key=auth
-            print(auth,x)
+            print(auth,x,len(x))
             text=f'''{x} just give me steps or algorithm not code for this please'''
             d={'role':'user',"content":text}
             responses=[]
