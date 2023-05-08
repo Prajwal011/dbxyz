@@ -31,7 +31,7 @@ class tg_c:
     def tg(self):
         global auth
         global c
-        print(c)            
+#         print(c)            
 #         print("starts")
 #         self.handler()
 #         que=(self.input_text)
@@ -111,7 +111,7 @@ class tg_c:
             button.on_click(on_button_clicked)
             display(button)
         c=c+1
-        def hint(x,auth='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'):
+        def hint(x,auth='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'):
 #             if self.auth=='' or self.auth==None or len(self.auth)<2:
 #                 self.auth='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'
             openai.api_key=auth
