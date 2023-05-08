@@ -1,5 +1,5 @@
 
-from setuptools import setup
+from setuptools import setup,find_packages
 setup(
     name='toogle_cell',
     version='0.0.1',
@@ -8,7 +8,7 @@ setup(
     author='PJ',
     author_email='prajwal.aiadventures@gmail.com',
     license='unlicense',
-    packages=['toggle_cell'],
+    packages=find_packages(),
     zip_safe=False
 
 )
