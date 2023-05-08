@@ -112,7 +112,7 @@ class tg_c:
             button.on_click(on_button_clicked)
             display(button)
         c=c+1
-        def hint(x,auth='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'):
+        def hint(x,auth='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'):
 #             if self.auth=='' or self.auth==None or len(self.auth)<2:
 #                 self.auth='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'
             print(auth)
