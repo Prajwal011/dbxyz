@@ -7,6 +7,7 @@ from ipywidgets import widgets
 
 # from IPython.display import clear_output
 c=0
+auth=''
 class tg_c:
     def handler(s):
         def process_input(input_text):
