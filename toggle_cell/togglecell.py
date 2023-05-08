@@ -75,7 +75,7 @@ class tg_c:
                     que = input_box.value
                     if auth.strip()!='':
                         print(auth)
-                        print(hint('''{}'''.format(que),auth))
+                        print(hint(que,auth))
 #                     else:
 #                         print(hint(''' {}'''.format(que)))
                 input_box = widgets.Textarea(description="Input:")
