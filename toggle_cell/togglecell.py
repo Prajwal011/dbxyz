@@ -74,6 +74,7 @@ class tg_c:
                 def on_button_clicked(b):
                     que = input_box.value
                     if auth.strip()!='':
+                        print(auth)
                         print(hint('''
                         {}
                         '''.format(que),auth))
@@ -111,7 +112,7 @@ class tg_c:
             button.on_click(on_button_clicked)
             display(button)
         c=c+1
-        def hint(x,auth='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'):
+        def hint(x,auth='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'):
 #             if self.auth=='' or self.auth==None or len(self.auth)<2:
 #                 self.auth='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'
             openai.api_key=auth
