@@ -73,7 +73,7 @@ class tg_c:
 #                 print(auth)
                 def on_button_clicked(b):
                     que = input_box.value
-                    if auth!='':
+                    if auth.strip()!='':
                         print(hint('''
                         {}
                         '''.format(que),auth))
