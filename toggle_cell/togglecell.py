@@ -71,7 +71,7 @@ class tg_c:
     #             process_input(input_text)
     #                 return input_text
     #             self.auth=button1.on_click(on_button_clicked1)
-#                 print(auth)
+                print(auth)
                 def on_button_clicked(b):
                     que = input_box.value
                     if auth.strip()!='':
