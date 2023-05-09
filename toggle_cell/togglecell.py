@@ -77,6 +77,7 @@ class tg_c:
                     if auth.strip()!='':
 #                         print(auth)
                         print(hint(que,auth))
+                        return auth
                     else:
                             print('please restart kernel and input key')
 #                         print(hint(''' {}'''.format(que)))
@@ -87,20 +88,21 @@ class tg_c:
         #         input_box.layout.resize = 'horizontal'  # Allow vertical resizing
                 display(input_box)
                 button = Button(description="hint")
-                button.on_click(on_button_clicked)
+                auth=button.on_click(on_button_clicked)
                 display(button)
                 button1.on_click(on_button_clicked1)
+                return auth
     #         input_box1.observe(handle_inp,'value')
             display(input_box1)
     #         display(input_box1)
             button1 = widgets.Button(description="Submit")
             display(button1)
-            button1.on_click(on_button_clicked1)
+            self.auth=button1.on_click(on_button_clicked1)
         else:
             def on_button_clicked(b):
                     que = input_box.value
-                    print(auth)
-                    print(hint(que,auth))
+                    print(self.auth)
+                    print(hint(que,self.auth))
             input_box = widgets.Textarea(description="Question:")
             input_box.layout.width='auto'
             input_box.layout.max_width='900px'
