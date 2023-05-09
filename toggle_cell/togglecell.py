@@ -7,7 +7,7 @@ from ipywidgets import widgets
 
 # from IPython.display import clear_output
 c=0
-# auth=''
+auth=''
 class tg_c:
     def handler(s):
         def process_input(input_text):
@@ -111,7 +111,7 @@ class tg_c:
         def hint(x,auth):
 #             if self.auth=='' or self.auth==None or len(self.auth)<2:
 #                 self.auth='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'
-#             print(auth)
+            print(auth)
             openai.api_key=auth.strip()
 #             print(auth,x,len(x))
             text=f'''{x} just give me steps or algorithm not code for this please'''
