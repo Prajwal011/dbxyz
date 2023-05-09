@@ -71,15 +71,16 @@ class tg_c:
     #             process_input(input_text)
     #                 return input_text
     #             self.auth=button1.on_click(on_button_clicked1)
-                print(auth)
                 def on_button_clicked(b):
                     que = input_box.value
+                    print(auth)
                     if auth.strip()!='':
 #                         print(auth)
                         print(hint(que,auth))
-                        return auth
                     else:
                             print('please restart kernel and input key')
+                    return auth
+                    
 #                         print(hint(''' {}'''.format(que)))
                 input_box = widgets.Textarea(description="Input:")
                 input_box.layout.width='auto'
