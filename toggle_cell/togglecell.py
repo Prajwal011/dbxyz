@@ -77,7 +77,8 @@ class tg_c:
                     if auth.strip()!='':
 #                         print(auth)
                         print(hint(que,auth))
-#                     else:
+                    else:
+                            print('please restart kernel and input key')
 #                         print(hint(''' {}'''.format(que)))
                 input_box = widgets.Textarea(description="Input:")
                 input_box.layout.width='auto'
@@ -96,19 +97,18 @@ class tg_c:
             display(button1)
             button1.on_click(on_button_clicked1)
         else:
-            print('please restart kernel and input key')
-#             def on_button_clicked(b):
-#                     que = input_box.value
-#                     print(hint('''
-#                     {}
-#                     '''.format(que)))
-#             input_box = widgets.Textarea(description="Question:")
-#             input_box.layout.width='auto'
-#             input_box.layout.max_width='900px'
-#             display(input_box)
-#             button = Button(description="hint")
-#             button.on_click(on_button_clicked)
-#             display(button)
+            def on_button_clicked(b):
+                    que = input_box.value
+                    print(hint('''
+                    {}
+                    '''.format(que)))
+            input_box = widgets.Textarea(description="Question:")
+            input_box.layout.width='auto'
+            input_box.layout.max_width='900px'
+            display(input_box)
+            button = Button(description="hint")
+            button.on_click(on_button_clicked)
+            display(button)
         c=c+1
         def hint(x,auth):
 #             if self.auth=='' or self.auth==None or len(self.auth)<2:
