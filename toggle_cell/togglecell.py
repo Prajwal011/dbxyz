@@ -99,7 +99,8 @@ class tg_c:
         else:
             def on_button_clicked(b):
                     que = input_box.value
-                    print(hint('''{}'''.format(que),auth))
+                    print(auth)
+                    print(hint(que,auth))
             input_box = widgets.Textarea(description="Question:")
             input_box.layout.width='auto'
             input_box.layout.max_width='900px'
