@@ -80,7 +80,7 @@ class tg_c:
         # print(auth,'inp3')
         def hint(x):
             openai.api_key=auth.strip()
-            text=f'''{x} just give me steps or algorithm not code for this please'''
+            text=f'''please only answer my question if it is related to programming {x} just give me steps or algorithm not code for this please'''
             d={'role':'user',"content":text}
             responses=[]
             op=openai.ChatCompletion.create(
