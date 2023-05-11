@@ -50,6 +50,7 @@ class tg_c:
                     # print(auth,'inp2')
                     if auth!='':
                         print(hint(que))
+                        input_box1.value=''
                     else:
                             print('please restart kernel and input key')                    
                 input_box = widgets.Textarea(description="Input:")
@@ -70,6 +71,7 @@ class tg_c:
                     que = input_box.value
                     # print(auth)
                     print(hint(que))
+                    input_box1.value=''
             input_box = widgets.Textarea(description="Question:")
             input_box.layout.width='auto'
             input_box.layout.max_width='900px'
