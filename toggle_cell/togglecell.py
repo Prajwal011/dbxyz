@@ -1,3 +1,4 @@
+from IPython.display import clear_output
 from IPython.core.display import display, HTML
 import openai
 from IPython.display import HTML
@@ -39,7 +40,7 @@ class tg_c:
         </script>''')
         if c==0:
             input_box1 = widgets.Textarea(description="Enter key:")
-            input_box1.layout.width='auto'
+            input_box1.layout.width='800px'
             output=widgets.Output()
             def on_button_clicked1(b):
                 global auth
@@ -47,19 +48,53 @@ class tg_c:
                 # print(auth,'inp1')
                 def on_button_clicked(b):
                     que = input_box.value
+                    # print(que,'b1')
                     # print(auth,'inp2')
+                    if auth!='':
+                        text=f'''please only answer my question if it is related to programming {que} just give me steps or algorithm not code for this please'''
+                        print(hint(text))
+                        input_box.value=''
+                    else:
+                            print('please restart kernel and input key')                    
+                def on_button_clicked_eval(b):
+                    que = input_box.value
+                    # print(que,'b_eval')
+                    # print(auth,'inp2')
+                    que=f'''{que} Evaluate this given code for me please on some criterias of your own also tell me the criterias you used'''
                     if auth!='':
                         print(hint(que))
                         input_box.value=''
                     else:
-                            print('please restart kernel and input key')                    
+                            print('please restart kernel and input key')
+                def on_button_clicked_ce(b):
+                    que = input_box.value
+                    # print(que,'b_ce')
+                    # print(auth,'inp2')
+                    que=f'''{que} Explain given code please'''
+                    if auth!='':
+                        print(hint(que))
+                        input_box.value=''
+                    else:
+                            print('please restart kernel and input key')
                 input_box = widgets.Textarea(description="Input:")
                 input_box.layout.width='auto'
                 input_box.layout.max_width='900px'
                 display(input_box)
                 button = Button(description="hint")
                 button.on_click(on_button_clicked)
-                display(button)
+                # display(button)
+                button_ce = Button(description="code explain")
+                button_ce.on_click(on_button_clicked_ce)
+                # display(button_ce)
+                button_eval = Button(description="Evaluate code")
+                button_eval.on_click(on_button_clicked_eval)
+                # display(button_eval)
+
+                # button_layout = widgets.Layout(display='flex', flex_flow='row', justify_content='space-between', width='auto')
+                button_layout = widgets.Layout(display='flex', flex_flow='row', justify_content='space-between', width='1000px')
+                # Arrange the buttons with spacing using the layout
+                button_container = widgets.HBox([button, widgets.HTML('&nbsp;'), button_ce, widgets.HTML('&nbsp;'), button_eval], layout=button_layout)
+                display(button_container)
                 # button1.on_click(on_button_clicked1)
                 # return auth
             display(input_box1)
@@ -67,22 +102,71 @@ class tg_c:
             display(button1)
             button1.on_click(on_button_clicked1)
         else:
-            def on_button_clicked(b):
+              def on_button_clicked(b):
                     que = input_box.value
-                    # print(auth)
-                    print(hint(que))
-                    input_box.value=''
-            input_box = widgets.Textarea(description="Question:")
-            input_box.layout.width='auto'
-            input_box.layout.max_width='900px'
-            display(input_box)
-            button = Button(description="hint")
-            button.on_click(on_button_clicked)
-            display(button)
+                    # print(que,'b1')
+                    # print(auth,'inp2')
+                    if auth!='':
+                        text=f'''please only answer my question if it is related to programming {que} just give me steps or algorithm not code for this please'''
+                        print(hint(text))
+                        input_box.value=''
+                    else:
+                            print('please restart kernel and input key')                    
+              def on_button_clicked_eval(b):
+                    que = input_box.value
+                    # print(que,'b_eval')
+                    # print(auth,'inp2')
+                    que=f'''{que} Evaluate this given code for me please on some criterias of your own also tell me the criterias you used'''
+                    if auth!='':
+                        print(hint(que))
+                        input_box.value=''
+                    else:
+                            print('please restart kernel and input key')
+              def on_button_clicked_ce(b):
+                    que = input_box.value
+                    # print(que,'b_ce')
+                    # print(auth,'inp2')
+                    que=f'''{que} Explain given code please'''
+                    if auth!='':
+                        print(hint(que))
+                        input_box.value=''
+                    else:
+                            print('please restart kernel and input key')
+              input_box = widgets.Textarea(description="Input:")
+              input_box.layout.width='auto'
+              input_box.layout.max_width='900px'
+              display(input_box)
+              button = Button(description="hint")
+              button.on_click(on_button_clicked)
+              # display(button)
+              button_ce = Button(description="code explain")
+              button_ce.on_click(on_button_clicked_ce)
+              # display(button_ce)
+              button_eval = Button(description="Evaluate code")
+              button_eval.on_click(on_button_clicked_eval)
+              # display(button_eval)
+
+              # button_layout = widgets.Layout(display='flex', flex_flow='row', justify_content='space-between', width='auto')
+              button_layout = widgets.Layout(display='flex', flex_flow='row', justify_content='space-between', width='1000px')
+              # Arrange the buttons with spacing using the layout
+              button_container = widgets.HBox([button, widgets.HTML('&nbsp;'), button_ce, widgets.HTML('&nbsp;'), button_eval], layout=button_layout)
+              display(button_container)
+            # def on_button_clicked(b):
+            #         que = input_box.value
+            #         # print(auth)
+            #         print(hint(que))
+            #         input_box.value=''
+            # input_box = widgets.Textarea(description="Question:")
+            # input_box.layout.width='auto'
+            # input_box.layout.max_width='900px'
+            # display(input_box)
+            # button = Button(description="hint")
+            # button.on_click(on_button_clicked)
+            # display(button)
         # print(auth,'inp3')
-        def hint(x):
+        def hint(text):
+            # clear_output()
             openai.api_key=auth.strip()
-            text=f'''please only answer my question if it is related to programming {x} just give me steps or algorithm not code for this please'''
             d={'role':'user',"content":text}
             responses=[]
             op=openai.ChatCompletion.create(
@@ -203,4 +287,4 @@ class tg_c:
 #                 return 'something went wrong i am not able to get this please retry question'
 #             else:
 #                  return output.replace('<code>','').replace('</code>','').strip(' ')
-# # 
+# #
