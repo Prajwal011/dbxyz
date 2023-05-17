@@ -10,5 +10,9 @@ setup(
     license='unlicense',
     packages=find_packages(),
     zip_safe=False
+    install_requires=[
+        'openai==0.27.6',
+        'simple_colors'
+    ]
 
 )
