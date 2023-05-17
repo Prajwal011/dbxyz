@@ -9,7 +9,7 @@ setup(
     author_email='prajwal.aiadventures@gmail.com',
     license='unlicense',
     packages=find_packages(),
-    zip_safe=False
+    zip_safe=False,
     install_requires=[
         'openai',
         'simple_colors'
