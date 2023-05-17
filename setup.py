@@ -11,7 +11,7 @@ setup(
     packages=find_packages(),
     zip_safe=False
     install_requires=[
-        'openai==0.27.6',
+        'openai',
         'simple_colors'
     ]
 
